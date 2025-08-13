@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 __all__ = ["CroatianHolidays", "CroatianHolidaysError", "InvalidYearError",
            "DateFormatError", "NetworkError", "ParseError", "SaveError"]
-__version__ = "0.1.0"
+__version__ = "0.1.4"
 
 logger = logging.getLogger(__name__)
 # Don’t spam users unless they opt-in to logging.
