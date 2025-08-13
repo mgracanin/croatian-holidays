@@ -12,7 +12,7 @@ A lightweight Python utility for **Croatian public holidays**: compute holidays 
 - Pretty-print and JSON save helpers
 
 > Project name on PyPI is **`croatian-holidays`**, while the import name is **`croatian_holidays`**.
-> You can check it out on https://pypi.org/project/croatian-holidays/0.1.0/
+> You can check it out on https://pypi.org/project/croatian-holidays/
 
 ## Installation
 
