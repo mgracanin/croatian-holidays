@@ -51,6 +51,13 @@ print(ch.upcomingHolidays(date=dt.datetime.now(), showdays=True, prettyPrint=Tru
 # 5) Holidays between two dates (inclusive)
 print(ch.getHolidaysBetweenDates("01. 05. 2025.", "31. 12. 2025.", showdays=True, prettyPrint=True))
 
+print(ch.getHolidaysBetweenDates(
+    datetime.datetime.now().date(),
+    datetime.date(datetime.datetime.now().year, 11, 20),
+    showdays=True,
+    prettyPrint=True
+))
+
 # 6) Persist to JSON
 data = ch.getHolidays(2025, showdays=True)
 from croatian_holidays import SaveError
