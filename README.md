@@ -31,7 +31,7 @@ pip install croatian-holidays==0.1.2 ## For specific versions
 
 ```python
 import datetime as dt
-from croatianholidays import CroatianHolidays
+from croatian_holidays import CroatianHolidays
 
 ch = CroatianHolidays()
 

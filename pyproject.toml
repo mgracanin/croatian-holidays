@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "croatian-holidays"
-version = "0.1.0"
-description = "Python library for Croatian public holidays with some computed dates, fixed days and optional web scraping."
-readme = "README.md"
+version = "0.1.3"
+description = "Python library for Croatian public holidays with computed Easter/Corpus Christi, fixed dates, and optional web scraping."
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [
@@ -38,15 +38,15 @@ Homepage = "https://github.com/mgracanin/croatian-holidays"
 Repository = "https://github.com/mgracanin/croatian-holidays"
 Issues = "https://github.com/mgracanin/croatian-holidays/issues"
 
-# If your code is a single module file (croatian_holidays.py) at the project root, use py-modules:
-# [tool.setuptools]
-# py-modules = ["croatian_holidays"]
+# ---- Setuptools config for src/ layout ----
+[tool.setuptools]
+package-dir = {"" = "src"}
 
-# If you later convert to a package directory, comment the above and use:
 [tool.setuptools.packages.find]
 where = ["src"]
-# and move your code into src/croatian_holidays/__init__.py etc.
+include = ["croatian_holidays*"]
 
+# ---- Tooling (optional) ----
 [tool.ruff]
 line-length = 100
 target-version = "py38"
