@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "croatian-holidays"
+version = "0.1.0"
+description = "Python library for Croatian public holidays with some computed dates, fixed days and optional web scraping."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "Matija Gračanin", email = "matijag@gmail.com" }
+]
+keywords = ["croatia", "holidays", "calendar", "dates", "easter", "corpus-christi"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+  "Typing :: Typed",
+]
+dependencies = [
+  "requests>=2.28",
+  "beautifulsoup4>=4.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/mgracanin/croatian-holidays"
+Repository = "https://github.com/mgracanin/croatian-holidays"
+Issues = "https://github.com/mgracanin/croatian-holidays/issues"
+
+# If your code is a single module file (croatian_holidays.py) at the project root, use py-modules:
+[tool.setuptools]
+py-modules = ["croatian_holidays"]
+
+# If you later convert to a package directory, comment the above and use:
+# [tool.setuptools.packages.find]
+# where = ["src"]
+# and move your code into src/croatian_holidays/__init__.py etc.
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.mypy]
+python_version = "3.8"
+warn_unused_configs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+strict_equality = true
