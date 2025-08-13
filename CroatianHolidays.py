@@ -402,3 +402,5 @@ if __name__ == "__main__":
         showdays=True,
         prettyPrint=True
     ))
+    hol_2025 = ch.getHolidays(2025, showdays=True)
+    print(hol_2025["01. 05. 2025."].get("day_of_week"))
