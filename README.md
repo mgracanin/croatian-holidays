@@ -23,7 +23,7 @@ pip install croatian-holidays
 or
 
 ```bash
-pip install croatian-holidays==0.1.2 ## For specific versions
+pip install croatian-holidays==0.1.3 ## For specific versions
 ```
 
 
