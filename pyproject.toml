@@ -39,12 +39,12 @@ Repository = "https://github.com/mgracanin/croatian-holidays"
 Issues = "https://github.com/mgracanin/croatian-holidays/issues"
 
 # If your code is a single module file (croatian_holidays.py) at the project root, use py-modules:
-[tool.setuptools]
-py-modules = ["croatian_holidays"]
+# [tool.setuptools]
+# py-modules = ["croatian_holidays"]
 
 # If you later convert to a package directory, comment the above and use:
-# [tool.setuptools.packages.find]
-# where = ["src"]
+[tool.setuptools.packages.find]
+where = ["src"]
 # and move your code into src/croatian_holidays/__init__.py etc.
 
 [tool.ruff]
