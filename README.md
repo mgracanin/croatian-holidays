@@ -4,7 +4,7 @@
 [![Python versions](https://img.shields.io/pypi/pyversions/croatian-holidays.svg)](https://pypi.org/project/croatian-holidays/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A lightweight Python utility to work with **Croatian public holidays**: compute holidays for any year, check if today is a holiday, list upcoming holidays, and optionally scrape an external reference page. Built with robust error handling suitable for library use.
+A lightweight Python utility for **Croatian public holidays**: compute holidays for any year, check if today is a holiday, list upcoming holidays, and optionally scrape an external reference page.
 
 - **Pure Python** for computed holidays (Easter, Corpus Christi, + fixed dates)
 - **Typed exceptions** and **no print spam** (uses `logging`)
@@ -19,6 +19,13 @@ A lightweight Python utility to work with **Croatian public holidays**: compute 
 ```bash
 pip install croatian-holidays
 ```
+
+or
+
+```bash
+pip install croatian-holidays==0.1.0 ## For specific versions
+```
+
 
 ## Quick start
 
@@ -57,7 +64,7 @@ except SaveError as e:
 
 - ✅ **Algorithmic dates**: Easter (Meeus/Jones/Butcher), Corpus Christi (+60 days)
 - ✅ **Fixed-date holidays**: New Year’s, Statehood Day, All Saints’, etc.
-- ✅ **APIs**:
+- ✅ **Features**:
   - `getHolidays(year, showdays=False, prettyprint=False)`
   - `upcomingHolidays(date, showdays=False, prettyPrint=False)`
   - `getHolidaysBetweenDates(start_date, end_date, showdays=False, prettyPrint=False)`
@@ -65,13 +72,12 @@ except SaveError as e:
   - `getHolidaysFromWeb(base_url=..., prettyPrint=False, timeout=10.0, ...)`
   - `prettyPrint(dict)`
   - `saveToJson(dict, filename)`
-- 🧯 **Errors are explicit** and do not leak prints—ideal for libraries and services.
+- 🧯 **Errors are explicit** and do not leak prints, using logger
 - 🧰 **Logging-friendly**: ships with a `NullHandler`; opt-in to logs in your app.
 
-## API Reference
+## Module Reference
 
 > Date strings use `"dd. mm. yyyy."` (note the trailing dot).  
-> Some parameter names keep the original camelCase for backward compatibility.
 
 ### `CroatianHolidays.getHolidays(year, showdays=False, prettyprint=False) -> dict | str`
 Return holidays for `year`.  
@@ -88,7 +94,7 @@ Return holidays within an **inclusive** range. `start_date`/`end_date` can be `s
 True if **today** is a holiday.
 
 ### `CroatianHolidays.getHolidaysFromWeb(base_url=..., prettyPrint=False, timeout=10.0, session=None, user_agent=None) -> dict | str`
-Parse an external web page for holidays (defensive HTML parsing, timeouts, clear errors).
+Try to parse an external web page for holidays
 
 ### `CroatianHolidays.prettyPrint(json_data: dict) -> str`
 Pretty JSON with UTF-8 (no ASCII escapes).
@@ -126,9 +132,9 @@ logging.basicConfig(level=logging.INFO)
 ## Development
 
 ```bash
-git clone https://github.com/yourname/croatian-holidays.git
+git clone https://github.com/mgracanin/croatian-holidays.git
 cd croatian-holidays
-python -m venv .venv && source .venv/bin/activate  # or use your preferred tool
+python -m venv .venv && source .venv/bin/activate  # or use whatever you like
 pip install -e .
 ```
 
