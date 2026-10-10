@@ -3,13 +3,20 @@ from __future__ import annotations
 import datetime
 import json
 import logging
-from typing import Dict, Union, Any, Optional
+from typing import Any, Dict, Optional, Union
 
 import requests
 from bs4 import BeautifulSoup
 
-__all__ = ["CroatianHolidays", "CroatianHolidaysError", "InvalidYearError",
-           "DateFormatError", "NetworkError", "ParseError", "SaveError"]
+__all__ = [
+    "CroatianHolidays",
+    "CroatianHolidaysError",
+    "DateFormatError",
+    "InvalidYearError",
+    "NetworkError",
+    "ParseError",
+    "SaveError",
+]
 __version__ = "0.1.4"
 
 logger = logging.getLogger(__name__)
@@ -155,7 +162,7 @@ class CroatianHolidays:
 
     def getHolidays(
         self, year: int, showdays: bool = False, prettyprint: bool = False
-    ) -> Union[Dict[str, Any], str]:
+    ) -> Union[dict[str, Any], str]:
         """
         Return Croatian public holidays for a given year.
 
@@ -398,9 +405,9 @@ if __name__ == "__main__":
     print(ch.upcomingHolidays(date=datetime.datetime.now(), showdays=True, prettyPrint=True))
     print(ch.getHolidaysBetweenDates(
         datetime.datetime.now().date(),
-        datetime.date(datetime.datetime.now().year, 11, 20),
+        datetime.datetime.now().date() + datetime.timedelta(days=90),
         showdays=True,
         prettyPrint=True
     ))
-    hol_2025 = ch.getHolidays(2025, showdays=True)
-    print(hol_2025["01. 05. 2025."].get("day_of_week"))
+    hol_2026 = ch.getHolidays(2026, showdays=True)
+    print(hol_2026["01. 05. 2026."].get("day_of_week"))
